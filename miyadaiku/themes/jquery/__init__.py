@@ -3,7 +3,7 @@ from miyadaiku.core import config
 
 JQUERY_MIN = 'jquery-3.2.1.min.js'
 JQUERY = 'jquery-3.2.1.js'
-DEST_PATH = 'static/jquery/'
+DEST_PATH = '/static/jquery/'
 
 def load_package(site):
     f = site.config.get('/', 'jquery_compressed')
