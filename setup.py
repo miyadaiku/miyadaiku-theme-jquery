@@ -24,13 +24,14 @@ def list_packages(root):
 
 setup(
     name="miyadaiku.themes.jquery",
-    version="0.0.3",
+    version="0.0.4",
     author="Atsuo Ishimoto",
     license="MIT",
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
     ],
+    description='jQuery files for miyadaiku static site generator',
     long_description=read('README.rst'),
     packages=list(list_packages('miyadaiku')),
     package_data={
