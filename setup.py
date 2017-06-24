@@ -1,5 +1,6 @@
 import os
 import pathlib
+import distutils
 from setuptools import setup, find_packages
 from miyadaiku.common import setuputils
 
@@ -10,8 +11,9 @@ requires = [
     "miyadaiku"
 ]
 
-
-
+srcdir = 'node_modules/jquery/dist/'
+destdir = 'miyadaiku/themes/jquery/externals/'
+copy_files = [[srcdir, ['jquery*.js'], destdir]]
 
 setup(
     name="miyadaiku.themes.jquery",
@@ -31,6 +33,6 @@ setup(
     install_requires=requires,
     include_package_data=True,
     zip_safe=False,
-    cmdclass={'bdist_wheel': setuputils.bdist_wheel_ext},
-    pre_wheel='npm install',
+    cmdclass={'copy_files': setuputils.copy_files},
+    copy_files=copy_files
 )
