@@ -6,8 +6,9 @@ JQUERY = 'jquery.js'
 DEST_PATH = '/static/jquery/'
 
 def load_package(site):
-    f = site.config.getbool('/', 'jquery_compressed'):
-    src_path = 'externals/'+(JQUERY_MIN if f else JQUERY)
+    f = site.config.getbool('/', 'jquery_compressed')
+    jquery = JQUERY_MIN if f else JQUERY
+    src_path = 'externals/'+jquery
     
     content = get_content_from_package(
         site, __name__, src_path, DEST_PATH+jquery, bin_loader)
