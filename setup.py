@@ -17,7 +17,7 @@ copy_files = [[srcdir, ['jquery*.js'], destdir]]
 
 setup(
     name="miyadaiku.themes.jquery",
-    version="0.0.5",
+    version="0.0.6",
     author="Atsuo Ishimoto",
     license="MIT",
     classifiers=[
