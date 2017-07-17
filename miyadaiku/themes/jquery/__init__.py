@@ -14,3 +14,5 @@ def load_package(site):
         site, __name__, src_path, DEST_PATH+jquery, bin_loader)
     site.contents.add(content)
     site.config.add('/', {'jquery_path': DEST_PATH+jquery})
+
+    site.add_template_module('jquery', 'miyadaiku.themes.jquery!macros.html')

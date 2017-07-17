@@ -35,5 +35,5 @@ Add following code to your template files.
 ::
 
    <!-- include jquery.js -->
-   {% include 'jquery.html' %}
+   {{ jquery.load_js(page) }}
 
