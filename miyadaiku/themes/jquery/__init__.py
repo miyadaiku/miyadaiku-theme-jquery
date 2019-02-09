@@ -1,6 +1,8 @@
 from miyadaiku.core.contents import bin_loader
 from miyadaiku.core import config
 
+from . __version__ import __version__
+
 JQUERY_MIN = 'jquery.min.js'
 JQUERY = 'jquery.js'
 DEST_PATH = '/static/jquery/'

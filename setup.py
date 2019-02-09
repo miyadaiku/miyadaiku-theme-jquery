@@ -1,4 +1,5 @@
 import os
+import re
 import pathlib
 import distutils
 from setuptools import setup, find_packages
@@ -15,17 +16,27 @@ srcdir = 'node_modules/jquery/dist/'
 destdir = 'miyadaiku/themes/jquery/externals/'
 copy_files = [[srcdir, ['jquery*.js'], destdir]]
 
+versionpy = DIR / 'miyadaiku/themes/jquery/__version__.py'
+version = re.search(r'"([\d.]+)"', versionpy.read_text())[1]
+
+
 setup(
     name="miyadaiku.themes.jquery",
-    version="0.0.10",
+    version=version,
     author="Atsuo Ishimoto",
     license="MIT",
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
     ],
     description='jQuery files for miyadaiku static site generator',
     long_description=setuputils.read_file(DIR, 'README.rst'),
+    url='https://github.com/miyadaiku/miyadaiku-themes-jquery',
+    project_urls={
+        'Miyadaiku': 'https://miyadaiku.github.io/',
+    },
+
     packages=list(setuputils.list_packages(DIR, 'miyadaiku')),
     package_data={
         '': setuputils.SETUP_FILE_EXTS,
