@@ -12,15 +12,15 @@ requires = [
 ]
 
 srcdir = DIR / 'node_modules/jquery/dist/'
-destdir = DIR / 'miyadaiku/themes/jquery/externals/'
+destdir = DIR / 'miyadaiku_theme_jquery/externals/'
 copy_files = [[srcdir, ['jquery*.js'], destdir]]
 
-versionpy = DIR / 'miyadaiku/themes/jquery/__version__.py'
+versionpy = DIR / 'miyadaiku_theme_jquery/__version__.py'
 version = re.search(r'"([\d.]+)"', versionpy.read_text())[1]
 
 
 setup(
-    name="miyadaiku.themes.jquery",
+    name="miyadaiku_theme_jquery",
     version=version,
     author="Atsuo Ishimoto",
     license="MIT",
@@ -31,12 +31,12 @@ setup(
     ],
     description='jQuery files for miyadaiku static site generator',
     long_description=setuputils.read_file(DIR, 'README.rst'),
-    url='https://github.com/miyadaiku/miyadaiku-themes-jquery',
+    url='https://github.com/miyadaiku/miyadaiku-theme-jquery',
     project_urls={
         'Miyadaiku': 'https://miyadaiku.github.io/',
     },
 
-    packages=list(setuputils.list_packages(DIR, 'miyadaiku')),
+    packages=list(setuputils.list_packages(DIR, 'miyadaiku_theme_jquery')),
     package_data={
         '': setuputils.SETUP_FILE_EXTS,
     },
