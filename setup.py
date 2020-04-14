@@ -3,17 +3,16 @@ import re
 import pathlib
 import distutils
 from setuptools import setup, find_packages
-from miyadaiku.common import setuputils
+from miyadaiku import setuputils
 
 DIR = pathlib.Path(__file__).resolve().parent
-os.chdir(DIR)
 
 requires = [
     "miyadaiku"
 ]
 
-srcdir = 'node_modules/jquery/dist/'
-destdir = 'miyadaiku/themes/jquery/externals/'
+srcdir = DIR / 'node_modules/jquery/dist/'
+destdir = DIR / 'miyadaiku/themes/jquery/externals/'
 copy_files = [[srcdir, ['jquery*.js'], destdir]]
 
 versionpy = DIR / 'miyadaiku/themes/jquery/__version__.py'
