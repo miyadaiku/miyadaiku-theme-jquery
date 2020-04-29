@@ -12,7 +12,7 @@ Use pip command to install jQuery.
 
 ::
 
-   $ pip install miyadaiku.themes.jquery
+   $ pip install miyadaiku_theme_jquery
 
 
 Configuraion
@@ -24,7 +24,7 @@ In your config.yml file of your project, add following configuration at `themes`
 ::
 
    themes:
-     - miyadaiku.themes.jquery    # <---- add this line
+     - miyadaiku_theme_jquery    # <---- add this line
 
 
 Usage

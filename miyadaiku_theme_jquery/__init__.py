@@ -1,5 +1,4 @@
-from miyadaiku.core.contents import bin_loader
-from miyadaiku.core import config
+import pkg_resources
 
 from . __version__ import __version__
 
@@ -12,8 +11,8 @@ def load_package(site):
     jquery = JQUERY_MIN if f else JQUERY
     src_path = 'externals/'+jquery
     
-    content = bin_loader.from_package(site, __name__, src_path, DEST_PATH+jquery)
-    site.contents.add(content)
+    jscontent = pkg_resources.resource_string(__name__, src_path)
+    site.files.add_bytes("binary", DEST_PATH + jquery, jscontent )
     site.config.add('/', {'jquery_path': DEST_PATH+jquery})
 
-    site.add_template_module('jquery', 'miyadaiku.themes.jquery!macros.html')
+    site.add_template_module('jquery', 'miyadaiku_theme_jquery!macros.html')
