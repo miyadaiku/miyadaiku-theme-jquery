@@ -1,4 +1,4 @@
-import pkg_resources
+import importlib.resources
 
 from . __version__ import __version__
 
@@ -11,7 +11,7 @@ def load_package(site):
     jquery = JQUERY_MIN if f else JQUERY
     src_path = 'externals/'+jquery
     
-    jscontent = pkg_resources.resource_string(__name__, src_path)
+    jscontent = importlib.resources.read_binary(__name__, src_path)
     site.files.add_bytes("binary", DEST_PATH + jquery, jscontent )
     site.config.add('/', {'jquery_path': DEST_PATH+jquery})
 
